@@ -30,6 +30,7 @@ socket.on(`handshake`, () => {
             // Debug
             console.log(`Ping message recieved.`);
             sendMessage(`Pong \`smile\``);
+            return;
         }
     });
 });
