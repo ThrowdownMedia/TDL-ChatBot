@@ -31,6 +31,6 @@ socket.on(`handshake`, () => {
             console.log(`[Command] Ping message recieved.`);
             sendMessage(`Pong \`smile\``);
             return;
-        }
+        };
     });
 });
