@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "socket.io-client": "^4.8.0"
+  },
+  "name": "tdl-chatbot",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Madhav Kothandaraman",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
