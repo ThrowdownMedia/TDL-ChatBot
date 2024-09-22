@@ -2,7 +2,7 @@ const config = require(`./config/config.js`)
 const io = require(`socket.io-client`);
 
 const socket = io(config.socketEndpoint);
-console.log(`Attempting to connect Throwdown Live Chat Service`);
+console.log(`[Socket] Attempting to connect Throwdown Live Chat Service`);
 
 // DO NOT CHANGE ANYTHING HERE!
 socket.emit(`connectToChat`, config.botUsername, config.apiKey, config.streamerUsername, true);
@@ -16,19 +16,19 @@ const sendMessage = (message) => {
 };
 
 socket.on(`handshake`, () => { 
-    console.log(`Socket handshake recieved from remote server.`);
+    console.log(`[Socket] Socket handshake recieved from remote server.`);
     // Chat listener
     socket.on(`chatMessage`, data => {
         // Debug
-        console.log(data.message);
+        // console.log(data.message);
 
         // Return if the chat message is from self.
         if (data.username === config.botUsername) return;
 
         // Respond if message (any case) is "ping"
-        if (data.message.toLowerCase() === `ping`) {
+        if (data.message.toLowerCase() === `!ping`) {
             // Debug
-            console.log(`Ping message recieved.`);
+            console.log(`[Command] Ping message recieved.`);
             sendMessage(`Pong \`smile\``);
             return;
         }
