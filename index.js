@@ -29,7 +29,7 @@ socket.on(`handshake`, () => {
         if (data.message.toLowerCase() === `!ping`) {
             // Debug
             console.log(`[Command] Ping message recieved.`);
-            sendMessage(`Pong :smile:`);
+            sendMessage(`Pong ;smile;`);
             return;
         };
     });
