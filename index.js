@@ -26,7 +26,7 @@ socket.on(`handshake`, () => {
         if (data.username === config.botUsername) return;
 
         // Respond if message (any case) is "ping"
-        if (data.message.toLowerCase() === `!ping`) {
+        if (data.message.toLowerCase() === `t!ping`) {
             // Debug
             console.log(`[Command] Ping message recieved.`);
             sendMessage(`Pong ;smile;`);
